@@ -7,4 +7,4 @@
 <p><a href="/Activity2/WineFestivalSchedule.html">Wine Festival Schedule</a></p>
 
 <!-- Davies Burgers -->
-<p><a href="/Activity3/DaviesBurger.html">Davie's Burgers</a></p>
+<p><a href="/Activity3/DaviesBurger.html">Davie JR's Menu</a></p>
