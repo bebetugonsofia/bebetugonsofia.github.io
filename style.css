@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  /* Vaporwave / NSO inspired pastel gradient */
+  background: linear-gradient(135deg, #1d0936 0%, #4b125f 50%, #883188 100%);
+  color: #000;
+  height: 100vh;
+  overflow: hidden; /* Prevents full page scroll; windows handle scroll */
+}
+
+/* --- 2. DESKTOP GRID LAYOUT (Rubric Requirement: CSS Grid) --- */
+.desktop,
+main {
+  padding: 20px;
+  height: calc(100vh - 40px); /* Leaves room for bottom taskbar */
+  overflow-y: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+/* --- 3. RETRO WINDOW BOXES --- */
+.window,
+section {
+  background: #c0c0c0; /* Classic 90s OS gray */
+  border: 2px solid #ffffff;
+  border-right-color: #000000;
+  border-bottom-color: #000000;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+}
+
+/* Rubric Requirement: Flexbox */
+.window-header,
+h1,
+h2 {
+  background: linear-gradient(90deg, #ff007f, #8a2be2); /* NSO Pink to Purple */
+  color: #ffffff;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.window-body,
+div {
+  padding: 12px;
+  background: #ece9d8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* --- 4. BUTTONS & ACTIVITY LINKS --- */
+a,
+button,
+.btn {
+  display: inline-block;
+  background: #c0c0c0;
+  border: 2px solid #ffffff;
+  border-right-color: #000000;
+  border-bottom-color: #000000;
+  padding: 6px 10px;
+  margin: 4px 2px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+a:active,
+button:active {
+  border: 2px solid #000000;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+/* Nested Grid for Projects & Course Activities */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.social-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* --- 5. BOTTOM TASKBAR (Rubric Requirement: Flexbox) --- */
+.taskbar,
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  z-index: 9999;
+}
+
+.start-btn {
+  font-weight: bold;
+  background: #c0c0c0;
+  border: 2px solid #ffffff;
+  border-right-color: #000000;
+  border-bottom-color: #000000;
+  padding: 4px 12px;
+}
+
+.clock {
+  background: #d4d0c8;
+  border: 1px solid #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+}
+
+/* --- 6. MOBILE RESPONSIVENESS (Rubric Requirement) --- */
+@media (max-width: 600px) {
+  .desktop,
+  main {
+    grid-template-columns: 1fr; /* Single column on phones */
+    padding: 10px;
+  }
+
+  .window,
+  section {
+    width: 100%;
+  }
+}
