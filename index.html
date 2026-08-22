@@ -3,143 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sofia's Portfolio</title>
-
+  <title>Sofia's Portfolio OS</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Retro Pixel Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- DESKTOP CONTAINER -->
-  <main class="desktop">
+  <!-- DESKTOP WORKSPACE -->
+  <main class="desktop" id="desktop">
+
+    <!-- DESKTOP ICONS -->
+    <div class="desktop-icons">
+      <div class="desktop-icon" onclick="openWindow('window-about')">
+        <div class="icon-emoji">📝</div>
+        <div class="icon-text">About Me</div>
+      </div>
+      <div class="desktop-icon" onclick="openWindow('window-achievements')">
+        <div class="icon-emoji">🏆</div>
+        <div class="icon-text">Awards</div>
+      </div>
+      <div class="desktop-icon" onclick="openWindow('window-activities')">
+        <div class="icon-emoji">📂</div>
+        <div class="icon-text">Class Files</div>
+      </div>
+      <div class="desktop-icon" onclick="openWindow('window-projects')">
+        <div class="icon-emoji">🎨</div>
+        <div class="icon-text">Projects</div>
+      </div>
+    </div>
     
-    <!-- LEFT COLUMN -->
-    <div class="desktop-column">
-      
-      <!-- ABOUT ME WINDOW -->
-      <section class="window" id="about">
-        <div class="window-header">
-          <span>📝 readme.txt - About Me</span>
-          <div class="window-controls">
-            <button>_</button><button>□</button><button class="close-btn">X</button>
-          </div>
-        </div>
-        <div class="window-body">
-          <h1 class="pixel-heading">Hi, I'm Sofia!</h1>
-          <p>Welcome to my portfolio. I'm a Computer Science student showcasing all my work &lt;3.</p>
-          
-          <!-- Social Links -->
-          <div class="social-links">
-            <a href="https://github.com/bebetugonsofia" target="_blank" class="retro-btn">GitHub</a>
-            <a href="https://www.linkedin.com/in/sofia-erika-p-babatugon-34244b430/" target="_blank" class="retro-btn">LinkedIn</a>
-            <a href="https://www.instagram.com/disnotwhoyowthink/" target="_blank" class="retro-btn">Instagram</a>
-            <a href="https://www.facebook.com/sofie.975467" target="_blank" class="retro-btn">Facebook</a>
-          </div>
-        </div>
-      </section>
+    <!-- DRAGGABLE WINDOWS -->
 
-      <!-- ACHIEVEMENTS WINDOW -->
-      <section class="window" id="achievements">
-        <div class="window-header">
-          <span>🏆 achievements.exe</span>
-          <div class="window-controls">
-            <button>_</button><button>□</button><button class="close-btn">X</button>
-          </div>
+    <!-- ABOUT ME WINDOW -->
+    <section class="window" id="window-about" style="top: 20px; left: 150px;">
+      <div class="window-header">
+        <span>📝 readme.txt - About Me</span>
+        <div class="window-controls">
+          <button onclick="closeWindow('window-about')">_</button>
+          <button onclick="maximizeWindow('window-about')">□</button>
+          <button class="close-btn" onclick="closeWindow('window-about')">X</button>
         </div>
-        <div class="window-body">
-          <ul class="achievement-list">
-            <li><strong>Leadership:</strong> CCS PIO Council</li>
-            <li><strong>Certificates:</strong> Coursera &amp; Codecademy</li>
-            <li><strong>Academic:</strong> SHS Research Paper</li>
-          </ul>
+      </div>
+      <div class="window-body">
+        <h1 class="pixel-heading">Hi, I'm Sofia!</h1>
+        <p>Welcome to my portfolio. I'm a Computer Science student showcasing all my work &lt;3.</p>
+        <div class="social-links">
+          <a href="https://github.com/bebetugonsofia" target="_blank" class="retro-btn">GitHub</a>
+          <a href="https://www.linkedin.com/in/sofia-erika-p-babatugon-34244b430/" target="_blank" class="retro-btn">LinkedIn</a>
+          <a href="https://www.instagram.com/disnotwhoyowthink/" target="_blank" class="retro-btn">Instagram</a>
+          <a href="https://www.facebook.com/sofie.975467" target="_blank" class="retro-btn">Facebook</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- DEV STATS (NSO FEATURE) -->
-      <section class="window" id="stats">
-        <div class="window-header">
-          <span>📊 Dev_Stats.exe</span>
-          <div class="window-controls">
-            <button>_</button><button>□</button><button class="close-btn">X</button>
-          </div>
+    <!-- ACHIEVEMENTS WINDOW -->
+    <section class="window" id="window-achievements" style="top: 80px; left: 180px;">
+      <div class="window-header">
+        <span>🏆 achievements.exe</span>
+        <div class="window-controls">
+          <button onclick="closeWindow('window-achievements')">_</button>
+          <button onclick="maximizeWindow('window-achievements')">□</button>
+          <button class="close-btn" onclick="closeWindow('window-achievements')">X</button>
         </div>
-        <div class="window-body">
-          <div class="stat-group">
-            <div class="stat-label"><span>Coding Energy</span><span>85 / 100</span></div>
-            <div class="stat-bar"><div class="stat-fill energy" style="width: 85%;"></div></div>
-          </div>
-          <div class="stat-group">
-            <div class="stat-label"><span>Coffee Intake</span><span>92 / 100</span></div>
-            <div class="stat-bar"><div class="stat-fill coffee" style="width: 92%;"></div></div>
-          </div>
-          <div class="stat-group">
-            <div class="stat-label"><span>Stress Level</span><span>15 / 100</span></div>
-            <div class="stat-bar"><div class="stat-fill darkness" style="width: 15%;"></div></div>
-          </div>
-        </div>
-      </section>
+      </div>
+      <div class="window-body">
+        <ul class="achievement-list">
+          <li><strong>Leadership:</strong> CCS PIO Council</li>
+          <li><strong>Certificates:</strong> Coursera &amp; Codecademy</li>
+          <li><strong>Academic:</strong> SHS Research Paper</li>
+        </ul>
+      </div>
+    </section>
 
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="desktop-column">
-
-      <!-- CLASS FILES WINDOW -->
-      <section class="window" id="activities">
-        <div class="window-header">
-          <span>📂 class_files</span>
-          <div class="window-controls">
-            <button>_</button><button>□</button><button class="close-btn">X</button>
-          </div>
+    <!-- CLASS FILES WINDOW -->
+    <section class="window" id="window-activities" style="top: 140px; left: 210px;">
+      <div class="window-header">
+        <span>📂 class_files</span>
+        <div class="window-controls">
+          <button onclick="closeWindow('window-activities')">_</button>
+          <button onclick="maximizeWindow('window-activities')">□</button>
+          <button class="close-btn" onclick="closeWindow('window-activities')">X</button>
         </div>
-        <div class="window-body grid-layout">
-          <a href="Activity1/FashionBlog.html" class="retro-btn activity-btn">👗 Fashion vlog</a>
-          <a href="Activity2/WineFestivalSchedule.html" class="retro-btn activity-btn">🍷 Wine Festival Schedule</a>
-          <a href="Activity3/DaviesBurger.html" class="retro-btn activity-btn">🍔 Davie JR's Menu</a>
-        </div>
-      </section>
+      </div>
+      <div class="window-body grid-layout">
+        <a href="Activity1/FashionBlog.html" class="retro-btn activity-btn">👗 Fashion vlog</a>
+        <a href="Activity2/WineFestivalSchedule.html" class="retro-btn activity-btn">🍷 Wine Festival Schedule</a>
+        <a href="Activity3/DaviesBurger.html" class="retro-btn activity-btn">🍔 Davie JR's Menu</a>
+      </div>
+    </section>
 
-      <!-- PROJECTS WINDOW -->
-      <section class="window" id="projects">
-        <div class="window-header">
-          <span>🎨 projects.dll</span>
-          <div class="window-controls">
-            <button>_</button><button>□</button><button class="close-btn">X</button>
-          </div>
+    <!-- PROJECTS WINDOW -->
+    <section class="window" id="window-projects" style="top: 200px; left: 240px;">
+      <div class="window-header">
+        <span>🎨 projects.dll</span>
+        <div class="window-controls">
+          <button onclick="closeWindow('window-projects')">_</button>
+          <button onclick="maximizeWindow('window-projects')">□</button>
+          <button class="close-btn" onclick="closeWindow('window-projects')">X</button>
         </div>
-        <div class="window-body grid-layout">
-          <article class="project-card">
-            <h3>Art Projects</h3>
-            <p>Digital and traditional artworks.</p>
-          </article>
-          <article class="project-card">
-            <h3>Personal Sketches</h3>
-            <p>Concept art and daily sketches.</p>
-          </article>
-          <article class="project-card">
-            <h3>Arduino Projects</h3>
-            <p>Hardware tinkering.</p>
-          </article>
-        </div>
-      </section>
-
-    </div>
+      </div>
+      <div class="window-body grid-layout">
+        <article class="project-card">
+          <h3>Art Projects</h3>
+          <p>Digital and traditional artworks.</p>
+        </article>
+        <article class="project-card">
+          <h3>Personal Sketches</h3>
+          <p>Concept art and daily sketches.</p>
+        </article>
+        <article class="project-card">
+          <h3>Arduino Projects</h3>
+          <p>Hardware tinkering.</p>
+        </article>
+      </div>
+    </section>
 
   </main>
 
-  <!-- TASKBAR -->
-  <nav class="taskbar">
-    <button class="start-btn">🌸 START</button>
-    <div class="taskbar-tabs">
-      <span class="task-tab active">📝 About</span>
-      <span class="task-tab">📂 class_files</span>
-    </div>
-    <div class="clock">12:00 PM</div>
-  </nav>
-
+  <!-- Links to our new JavaScript file -->
+  <script src="script.js"></script>
 </body>
 </html>
