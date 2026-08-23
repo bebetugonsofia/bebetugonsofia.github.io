@@ -3,93 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sofia's Y2K Portfolio</title>
+  <title>Sofia's Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Fun Bubbly Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- 1. PORTFOLIO TITLE & DIVIDERS -->
-  <header class="portfolio-header">
-    <h1>PoRtFoLiO</h1>
-  </header>
-  <div class="gingham-border"></div>
-  <div class="scallop-border"></div>
-  <div class="food-border">🍟 🍔 🍕 🍟 🍔 🍕 🍟 🍔 🍕 🍟 🍔 🍕 🍟 🍔 🍕 🍟 🍔 🍕 🍟 🍔 🍕</div>
-
-  <!-- 2. ABOUT ME INTRO (Profile + Sticky Note) -->
-  <section class="hero-section">
-    <div class="checkerboard-bg"></div>
+  <main class="desktop">
     
-    <div class="profile-container">
-      <div class="orange-target">
-        <!-- Add your profile image file here -->
-        <img src="profile.png" alt="Sofia" class="profile-pic" onerror="this.style.display='none'"> 
-      </div>
-    </div>
-
-    <div class="sticky-note">
-      <p>Hi, I'm Sofia! Welcome to my portfolio. I'm a Computer Science student showcasing all my work &lt;3.</p>
-    </div>
-  </section>
-
-  <!-- 3. SOCIAL LINKS -->
-  <main class="scrapbook-container">
-    <div class="retro-stripes"></div>
-
-    <!-- STICKER PLACEHOLDERS (Export from Canva) -->
-    <img src="megaphone.png" class="sticker megaphone" onerror="this.style.display='none'">
-    <img src="cat1.png" class="sticker cat-top" onerror="this.style.display='none'">
-    <img src="cat2.png" class="sticker cat-bottom" onerror="this.style.display='none'">
-
-    <h2 class="section-title">SoCiaLs</h2>
-
-    <div class="scrapbook-content socials-stack">
+    <!-- LEFT COLUMN -->
+    <div class="desktop-column">
       
-      <!-- Linked In -->
-      <a href="https://www.linkedin.com/in/sofia-erika-p-babatugon-34244b430/" target="_blank" class="y2k-box">
-        <div class="y2k-header">♥♥♥♥</div>
-        <div class="y2k-body icon-box">
-          <img src="linkedin-icon.png" alt="in" class="social-icon" onerror="this.alt='[ in ]'">
+      <!-- ABOUT ME WINDOW -->
+      <section class="window" id="about">
+        <div class="window-header">
+          <span>📝 readme.txt - About Me</span>
+          <div class="window-controls">
+            <button>_</button><button>□</button><button class="close-btn">X</button>
+          </div>
         </div>
-      </a>
+        <div class="window-body">
+          <h1 class="pixel-heading">Hi, I'm Sofia!</h1>
+          <p>Welcome to my portfolio. I'm a Computer Science student showcasing all my work &lt;3.</p>
+          
+          <div class="social-links">
+            <a href="https://github.com/bebetugonsofia" target="_blank" class="retro-btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/sofia-erika-p-babatugon-34244b430/" target="_blank" class="retro-btn">LinkedIn</a>
+            <a href="https://www.instagram.com/disnotwhoyowthink/" target="_blank" class="retro-btn">Instagram</a>
+            <a href="https://www.facebook.com/sofie.975467" target="_blank" class="retro-btn">Facebook</a>
+          </div>
+        </div>
+      </section>
 
-      <!-- Facebook -->
-      <a href="https://www.facebook.com/sofie.975467" target="_blank" class="y2k-box">
-        <div class="y2k-header">♥♥♥♥</div>
-        <div class="y2k-body icon-box">
-          <img src="facebook-icon.png" alt="f" class="social-icon" onerror="this.alt='[ f ]'">
+      <!-- ACHIEVEMENTS WINDOW -->
+      <section class="window" id="achievements">
+        <div class="window-header">
+          <span>🏆 achievements.exe</span>
+          <div class="window-controls">
+            <button>_</button><button>□</button><button class="close-btn">X</button>
+          </div>
         </div>
-      </a>
-
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/disnotwhoyowthink/" target="_blank" class="y2k-box">
-        <div class="y2k-header">♥♥♥♥</div>
-        <div class="y2k-body icon-box">
-          <img src="instagram-icon.png" alt="ig" class="social-icon" onerror="this.alt='[ ig ]'">
+        <div class="window-body">
+          <ul class="achievement-list">
+            <li><strong>Leadership:</strong> CCS PIO Council</li>
+            <li><strong>Certificates:</strong> Coursera &amp; Codecademy</li>
+            <li><strong>Academic:</strong> SHS Research Paper</li>
+          </ul>
         </div>
-      </a>
-
-      <!-- GitHub -->
-      <a href="https://github.com/bebetugonsofia" target="_blank" class="y2k-box">
-        <div class="y2k-header">♥♥♥♥</div>
-        <div class="y2k-body icon-box">
-          <img src="github-icon.png" alt="gh" class="social-icon" onerror="this.alt='[ gh ]'">
-        </div>
-      </a>
+      </section>
 
     </div>
-  </main>
 
-  <!-- FILMSTRIP DIVIDER -->
-  <div class="filmstrip-container">
-    <div class="filmstrip"></div>
-    <div class="filmstrip secondary-strip"></div>
-  </div>
+    <!-- RIGHT COLUMN -->
+    <div class="desktop-column">
+
+      <!-- CLASS FILES WINDOW -->
+      <section class="window" id="activities">
+        <div class="window-header">
+          <span>📂 class_files</span>
+          <div class="window-controls">
+            <button>_</button><button>□</button><button class="close-btn">X</button>
+          </div>
+        </div>
+        <div class="window-body grid-layout">
+          <a href="Activity1/FashionBlog.html" class="retro-btn activity-btn">👗 Fashion vlog</a>
+          <a href="Activity2/WineFestivalSchedule.html" class="retro-btn activity-btn">🍷 Wine Festival Schedule</a>
+          <a href="Activity3/DaviesBurger.html" class="retro-btn activity-btn">🍔 Davie JR's Menu</a>
+        </div>
+      </section>
+
+      <!-- PROJECTS WINDOW -->
+      <section class="window" id="projects">
+        <div class="window-header">
+          <span>🎨 projects.dll</span>
+          <div class="window-controls">
+            <button>_</button><button>□</button><button class="close-btn">X</button>
+          </div>
+        </div>
+        <div class="window-body grid-layout">
+          <article class="project-card">
+            <h3>Art Projects</h3>
+            <p>Digital and traditional artworks.</p>
+          </article>
+          <article class="project-card">
+            <h3>Personal Sketches</h3>
+            <p>Concept art and daily sketches.</p>
+          </article>
+          <article class="project-card">
+            <h3>Arduino Projects</h3>
+            <p>Hardware tinkering.</p>
+          </article>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
 
 </body>
 </html>
