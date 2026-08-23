@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sofia's Portfolio</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- Retro Pixel Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- DESKTOP CONTAINER -->
   <main class="desktop">
     
     <!-- LEFT COLUMN -->
@@ -28,6 +32,7 @@
           <h1 class="pixel-heading">Hi, I'm Sofia!</h1>
           <p>Welcome to my portfolio. I'm a Computer Science student showcasing all my work &lt;3.</p>
           
+          <!-- Social Links -->
           <div class="social-links">
             <a href="https://github.com/bebetugonsofia" target="_blank" class="retro-btn">GitHub</a>
             <a href="https://www.linkedin.com/in/sofia-erika-p-babatugon-34244b430/" target="_blank" class="retro-btn">LinkedIn</a>
@@ -51,6 +56,30 @@
             <li><strong>Certificates:</strong> Coursera &amp; Codecademy</li>
             <li><strong>Academic:</strong> SHS Research Paper</li>
           </ul>
+        </div>
+      </section>
+
+      <!-- DEV STATS (NSO FEATURE) -->
+      <section class="window" id="stats">
+        <div class="window-header">
+          <span>📊 Dev_Stats.exe</span>
+          <div class="window-controls">
+            <button>_</button><button>□</button><button class="close-btn">X</button>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="stat-group">
+            <div class="stat-label"><span>Coding Energy</span><span>85 / 100</span></div>
+            <div class="stat-bar"><div class="stat-fill energy" style="width: 85%;"></div></div>
+          </div>
+          <div class="stat-group">
+            <div class="stat-label"><span>Coffee Intake</span><span>92 / 100</span></div>
+            <div class="stat-bar"><div class="stat-fill coffee" style="width: 92%;"></div></div>
+          </div>
+          <div class="stat-group">
+            <div class="stat-label"><span>Stress Level</span><span>15 / 100</span></div>
+            <div class="stat-bar"><div class="stat-fill darkness" style="width: 15%;"></div></div>
+          </div>
         </div>
       </section>
 
@@ -101,6 +130,16 @@
     </div>
 
   </main>
+
+  <!-- TASKBAR -->
+  <nav class="taskbar">
+    <button class="start-btn">🌸 START</button>
+    <div class="taskbar-tabs">
+      <span class="task-tab active">📝 About</span>
+      <span class="task-tab">📂 class_files</span>
+    </div>
+    <div class="clock">12:00 PM</div>
+  </nav>
 
 </body>
 </html>
