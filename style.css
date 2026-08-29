@@ -41,14 +41,14 @@ body.home-page {
   flex-wrap: nowrap !important;
   justify-content: flex-end;
   align-items: center;
-  gap: clamp(4px, 1.5vw, 24px);
+  gap: clamp(8px, 1.8vw, 28px);
   width: 100%;
 }
 
 .nav-link {
   color: #ffffff;
   text-decoration: none;
-  font-size: clamp(0.35rem, 1.35vw, 0.82rem);
+  font-size: clamp(0.45rem, 1.1vw, 0.85rem);
   white-space: nowrap !important;
   transition: color 0.2s ease;
 }
@@ -116,30 +116,53 @@ body.about-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(12px, 3vw, 40px);
-}
-
-.portfolio-container {
-  width: 100%;
-  max-width: 1100px;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(20px, 3.5vw, 40px);
-  margin-top: 20px;
+  padding: clamp(16px, 3vw, 40px);
 }
 
 .about-page .header {
   width: 100%;
+  max-width: 1280px;
   display: flex;
   justify-content: flex-end;
+  margin-bottom: clamp(20px, 3vw, 40px);
 }
 
-.about-main {
+.navbar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: clamp(20px, 4vw, 50px);
+  justify-content: flex-end;
+  align-items: center;
+  gap: clamp(12px, 2vw, 32px);
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(0.5rem, 1vw, 0.85rem);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #cbb4ff;
+}
+
+.portfolio-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 5vw, 60px);
+}
+
+/* Two Column Layout */
+.about-main {
+  display: grid;
+  grid-template-columns: clamp(280px, 30vw, 380px) 1fr;
+  gap: clamp(30px, 5vw, 70px);
+  align-items: start;
   width: 100%;
 }
 
@@ -148,78 +171,78 @@ body.about-page {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex-shrink: 0;
+  gap: clamp(16px, 2vw, 24px);
 }
 
 .about-title {
-  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
   color: #ffffff;
-  margin-bottom: clamp(12px, 2vw, 25px);
+  line-height: 1.2;
   white-space: nowrap;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+  margin: 0;
 }
 
 .profile-frame {
-  width: clamp(300px, 22vw, 300px);
-  height: clamp(300px, 22vw, 300px);
+  width: 100%;
+  aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
-  align-items: left;
-  flex-shrink: 0;
+  align-items: center;
 }
 
 .profile-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Right Column */
 .about-right {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  min-width: 0;
-  margin-top: clamp(10px, 3vw, 55px);
+  gap: clamp(20px, 3vw, 35px);
 }
 
 .bio-box {
-  margin-bottom: clamp(15px, 2.5vw, 25px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vw, 20px);
 }
 
 .bio-heading {
-  font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
   color: #ffffff;
+  line-height: 1.2;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: clamp(10px, 1.8vw, 18px);
+  gap: 12px;
+  margin: 0;
 }
 
 .inline-sparkle {
-  width: clamp(16px, 2.2vw, 26px);
+  width: clamp(20px, 2.5vw, 32px);
   height: auto;
   object-fit: contain;
   image-rendering: pixelated;
 }
 
 .bio-paragraph {
-  font-size: clamp(0.48rem, 1.02vw, 0.72rem);
-  line-height: 1.85;
+  font-size: clamp(0.6rem, 1vw, 0.82rem);
+  line-height: 1.9;
   color: #ffffff;
 }
 
 /* Socials Container */
 .socials-container {
   width: 100%;
-  margin-top: clamp(5px, 1vw, 15px);
 }
 
 .socials-divider {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: clamp(12px, 2vw, 22px);
+  margin-bottom: clamp(16px, 2vw, 24px);
 }
 
 .divider-line {
@@ -229,17 +252,18 @@ body.about-page {
 }
 
 .divider-text {
-  padding: 0 clamp(6px, 1.2vw, 14px);
-  font-size: clamp(0.48rem, 1.1vw, 0.78rem);
+  padding: 0 clamp(8px, 1.5vw, 18px);
+  font-size: clamp(0.55rem, 1vw, 0.82rem);
   letter-spacing: 2px;
   white-space: nowrap;
 }
 
 .socials-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  justify-items: center;
+  align-items: end;
   width: 100%;
 }
 
@@ -247,18 +271,18 @@ body.about-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   text-decoration: none;
   color: #ffffff;
-  font-size: clamp(0.4rem, 0.95vw, 0.62rem);
+  font-size: clamp(0.5rem, 0.8vw, 0.7rem);
   transition:
     transform 0.2s ease,
     color 0.2s ease;
 }
 
 .social-icon {
-  width: clamp(90px, 4vw, 100px);
-  height: clamp(90px, 4vw, 100px);
+  width: clamp(55px, 4.5vw, 85px);
+  height: clamp(55px, 4.5vw, 85px);
   object-fit: contain;
   image-rendering: pixelated;
 }
@@ -275,29 +299,29 @@ body.about-page {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: clamp(16px, 2.5vw, 28px);
 }
 
 .skills-title {
-  font-size: clamp(1.1rem, 2.8vw, 1.9rem);
+  font-size: clamp(1.2rem, 2.5vw, 2.1rem);
   color: #ffffff;
-  margin-bottom: clamp(15px, 2.5vw, 25px);
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
   letter-spacing: 1px;
 }
 
 .skills-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: clamp(10px, 1.8vw, 24px);
+  justify-items: center;
   align-items: center;
   width: 100%;
-  gap: clamp(6px, 1.5vw, 18px);
 }
 
 .skill-icon {
-  width: clamp(60px, 40vw, 72px);
-  height: clamp(60px, 40vw, 72px);
+  width: 100%;
+  max-width: 85px;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   image-rendering: pixelated;
   transition: transform 0.2s ease;
@@ -307,40 +331,33 @@ body.about-page {
   transform: scale(1.08);
 }
 
-@media (max-width: 650px) {
-  .navbar {
-    justify-content: center;
-    gap: clamp(3px, 1.2vw, 8px) !important;
-  }
-
-  .nav-link {
-    font-size: clamp(0.32rem, 2.2vw, 0.55rem);
-  }
-
+/* Responsive adjustments */
+@media (max-width: 850px) {
   .about-main {
-    flex-direction: column;
-    gap: 15px;
+    grid-template-columns: 1fr;
   }
 
   .about-left {
+    align-items: center;
     width: 100%;
   }
 
-  .about-right {
-    margin-top: 5px;
-    width: 100%;
+  .profile-frame {
+    max-width: 320px;
   }
 
-  /* Skills grid wraps into 4 columns per row like mobile design */
   .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    justify-items: start;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .skill-icon {
-    width: clamp(48px, 16vw, 68px);
-    height: clamp(48px, 16vw, 68px);
+  .socials-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
