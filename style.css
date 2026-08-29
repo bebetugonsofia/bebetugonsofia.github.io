@@ -1,6 +1,3 @@
-/* ==========================================
-   GLOBAL RESET & BASE SETUP
-   ========================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +13,7 @@ body {
 }
 
 /* ==========================================
-   HOME PAGE STYLES
+   HOME PAGE 
    ========================================== */
 body.home-page {
   background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
@@ -107,7 +104,7 @@ body.home-page {
 }
 
 /* ==========================================
-   ABOUT ME PAGE STYLES
+   ABOUT ME PAGE
    ========================================== */
 body.about-page {
   background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
@@ -253,7 +250,6 @@ body.about-page {
   color: #cbb4ff;
 }
 
-/* Technical Skills Section */
 .skills-section {
   width: 100%;
   display: flex;
@@ -326,7 +322,7 @@ body.about-page {
 }
 
 /* ==========================================
-   ACHIEVEMENTS PAGE STYLES
+   ACHIEVEMENTS PAGE 
    ========================================== */
 body.achievements-page {
   background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
@@ -406,7 +402,7 @@ body.achievements-page {
 }
 
 /* ==========================================
-   CLASS ACTIVITIES PAGE
+   CLASS ACTIVITIES
    ========================================== */
 body.activities-page {
   background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
@@ -497,7 +493,7 @@ body.activities-page {
 }
 
 /* ==========================================
-   PROJECTS PAGE STYLES
+   PROJECTS PAGE 
    ========================================== */
 body.projects-page {
   background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
