@@ -9,8 +9,7 @@
 
 body {
   font-family: "Press Start 2P", cursive, sans-serif;
-  background-color: #1c182a;
-  color: #f1f1f1;
+  background: linear-gradient(#1b0c9c, #6462e9);
   line-height: 1.8;
   padding-bottom: 50px;
 }
@@ -24,34 +23,32 @@ a {
    HEADER & NAVIGATION
    ========================================== */
 .header {
-  background-color: #2a2342;
-  border-bottom: 4px solid #ff79c6;
+  background-color: #1b0c9c;
   position: sticky;
   top: 0;
   z-index: 100;
   padding: 15px 20px;
-  box-shadow: 0 4px 0 #120e1d;
 }
 
 .navbar {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
 }
 
 .navbar a {
   font-size: 0.75rem;
-  color: #bd93f9;
+  color: #ffffff;
   padding: 8px 12px;
   border: 2px solid transparent;
   transition: all 0.2s ease;
 }
 
 .navbar a:hover {
-  color: #ff79c6;
-  background-color: #1c182a;
+  color: #8d6aff;
+  background-color: #bfb2ee;
   border-color: #ff79c6;
   box-shadow: 3px 3px 0 #8be9fd;
 }
@@ -135,7 +132,7 @@ h3 {
 .socials-card,
 .skills-card {
   background-color: #1c182a;
-  border: 3px solid #bd93f9;
+  border: 3px solid #a67fdb;
   box-shadow: 4px 4px 0 #000;
   padding: 20px;
   font-size: 0.75rem;
