@@ -1,5 +1,5 @@
 /* ==========================================
-   GLOBAL RESET & FULL VIEWPORT SETUP
+   GLOBAL RESET & BASE SETUP
    ========================================== */
 * {
   box-sizing: border-box;
@@ -29,7 +29,7 @@ body.home-page {
   box-sizing: border-box;
 }
 
-/* Header & Navigation */
+/* Navigation Bar */
 .header {
   width: 100%;
   display: flex;
@@ -42,14 +42,13 @@ body.home-page {
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
-  gap: clamp(6px, 1.8vw, 28px);
-  width: 100%;
+  gap: clamp(12px, 2vw, 28px);
 }
 
 .nav-link {
   color: #ffffff;
   text-decoration: none;
-  font-size: clamp(0.38rem, 1.8vw, 0.85rem);
+  font-size: clamp(0.55rem, 1.1vw, 0.85rem);
   white-space: nowrap;
   transition: color 0.2s ease;
 }
@@ -108,80 +107,75 @@ body.home-page {
 }
 
 /* ==========================================
-   ABOUT PAGE BASE & GRID LAYOUT
+   ABOUT PAGE STYLES & LAYOUT
    ========================================== */
 body.about-page {
-  background-color: #2a1e9e;
+  background-color: #2b1f9e;
   color: #ffffff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: clamp(15px, 3vw, 40px);
+  padding: 30px 40px;
 }
 
 .portfolio-container {
   width: 100%;
-  max-width: 1050px;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
-  gap: clamp(25px, 4vw, 45px);
+  gap: 35px;
 }
 
-/* Desktop Grid Layout Setup */
-.about-grid {
-  display: grid;
-  grid-template-columns: clamp(180px, 22vw, 290px) 1fr;
-  grid-template-areas:
-    "title   nav"
-    "profile bio"
-    "profile socials";
-  column-gap: clamp(20px, 4vw, 50px);
-  row-gap: clamp(8px, 1.5vw, 18px);
-  align-items: start;
-}
-
-/* Assign Grid Areas */
+/* Header Override for About Page */
 .about-page .header {
-  grid-area: nav;
-  justify-self: end;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+/* Main Split Layout (Left Column & Right Column) */
+.about-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
   width: 100%;
 }
-.about-title {
-  grid-area: title;
-}
-.profile-frame {
-  grid-area: profile;
-}
-.bio-box {
-  grid-area: bio;
-}
-.socials-box {
-  grid-area: socials;
+
+/* Left Column */
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  width: 300px;
 }
 
-/* About Title */
 .about-title {
-  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  font-size: clamp(2rem, 3.8vw, 3rem);
   color: #ffffff;
+  margin-bottom: 25px;
   white-space: nowrap;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
-/* Profile Picture Outer Frame */
 .profile-frame {
-  width: clamp(170px, 22vw, 280px);
-  height: clamp(170px, 22vw, 280px);
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  border: clamp(5px, 0.8vw, 9px) solid #8f58ff;
+  border: 7px solid #8f58ff;
   box-shadow:
-    0 0 0 clamp(3px, 0.5vw, 6px) #2a1e9e,
-    0 0 0 clamp(6px, 1vw, 12px) #b485ff;
+    0 0 0 5px #2b1f9e,
+    0 0 0 10px #b485ff;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  flex-shrink: 0;
 }
 
 .profile-img {
@@ -190,44 +184,52 @@ body.about-page {
   object-fit: cover;
 }
 
-/* Bio Content Section */
+/* Right Column */
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-top: 55px; /* Aligns bio visually with top of profile photo */
+}
+
 .bio-box {
-  margin-top: clamp(0px, 1vw, 15px);
+  margin-bottom: 25px;
 }
 
 .bio-heading {
-  font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+  font-size: 1.6rem;
   color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: clamp(10px, 1.8vw, 18px);
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .inline-sparkle {
-  width: clamp(16px, 2.2vw, 26px);
+  width: 26px;
   height: auto;
   object-fit: contain;
   image-rendering: pixelated;
 }
 
 .bio-paragraph {
-  font-size: clamp(0.48rem, 1.02vw, 0.72rem);
-  line-height: 1.85;
+  font-size: 0.68rem;
+  line-height: 1.9;
   color: #ffffff;
 }
 
 /* Socials Divider & Link Buttons */
-.socials-box {
+.socials-container {
   width: 100%;
-  margin-top: clamp(5px, 1vw, 15px);
+  margin-top: 15px;
 }
 
 .socials-divider {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: clamp(12px, 2vw, 22px);
+  margin-bottom: 22px;
 }
 
 .divider-line {
@@ -237,36 +239,37 @@ body.about-page {
 }
 
 .divider-text {
-  padding: 0 clamp(6px, 1.2vw, 14px);
-  font-size: clamp(0.48rem, 1.1vw, 0.78rem);
-  letter-spacing: 2px;
+  padding: 0 15px;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
   white-space: nowrap;
 }
 
 .socials-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 0 10px;
 }
 
 .social-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   text-decoration: none;
   color: #ffffff;
-  font-size: clamp(0.4rem, 0.95vw, 0.62rem);
+  font-size: 0.6rem;
   transition:
     transform 0.2s ease,
     color 0.2s ease;
 }
 
 .social-icon {
-  width: clamp(28px, 4vw, 46px);
-  height: clamp(28px, 4vw, 46px);
+  width: 42px;
+  height: 42px;
   object-fit: contain;
   image-rendering: pixelated;
 }
@@ -284,12 +287,13 @@ body.about-page {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-top: 10px;
 }
 
 .skills-title {
-  font-size: clamp(1.1rem, 2.8vw, 1.9rem);
+  font-size: 1.8rem;
   color: #ffffff;
-  margin-bottom: clamp(15px, 2.5vw, 25px);
+  margin-bottom: 22px;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
   letter-spacing: 1px;
 }
@@ -300,12 +304,13 @@ body.about-page {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: clamp(6px, 1.5vw, 18px);
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .skill-icon {
-  width: clamp(38px, 6.5vw, 72px);
-  height: clamp(38px, 6.5vw, 72px);
+  width: 68px;
+  height: 68px;
   object-fit: contain;
   image-rendering: pixelated;
   transition: transform 0.2s ease;
@@ -316,44 +321,60 @@ body.about-page {
 }
 
 /* ==========================================
-   MOBILE RESPONSIVE ADJUSTMENTS
+   MOBILE & RESPONSIVE LAYOUT (<= 768px)
    ========================================== */
-@media (max-width: 700px) {
-  .about-grid {
-    grid-template-columns: clamp(100px, 28vw, 150px) 1fr;
-    grid-template-areas:
-      "nav     nav"
-      "title   title"
-      "profile bio"
-      "socials socials";
-    column-gap: 10px;
-    row-gap: 12px;
+@media (max-width: 768px) {
+  body.about-page {
+    padding: 20px 15px;
   }
 
   .about-page .header {
-    justify-self: center;
     justify-content: center;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
   }
 
   .about-page .navbar {
     justify-content: center;
-    gap: clamp(4px, 1.4vw, 10px);
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .about-main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-left {
+    width: 100%;
+    align-items: flex-start;
   }
 
   .about-title {
-    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    font-size: 2rem;
+  }
+
+  .profile-frame {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-right {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .socials-row {
+    padding: 0;
   }
 
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    justify-items: start;
+    gap: 12px;
   }
 
   .skill-icon {
-    width: clamp(42px, 18vw, 65px);
-    height: clamp(42px, 18vw, 65px);
+    width: 58px;
+    height: 58px;
   }
 }
