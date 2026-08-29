@@ -106,9 +106,7 @@ body.home-page {
   pointer-events: none;
 }
 
-/* ==========================================
-   ABOUT PAGE STYLES & LAYOUT
-   ========================================== */
+/* Page Background & Global Setup */
 body.about-page {
   background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
   color: #ffffff;
@@ -119,12 +117,13 @@ body.about-page {
   padding: clamp(16px, 3vw, 40px);
 }
 
+/* 1: Navigation Bar */
 .about-page .header {
   width: 100%;
   max-width: 1280px;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: clamp(20px, 3vw, 40px);
+  margin-bottom: clamp(20px, 3vw, 35px);
 }
 
 .navbar {
@@ -148,39 +147,38 @@ body.about-page {
   color: #cbb4ff;
 }
 
+/* Main Container */
 .portfolio-container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: clamp(40px, 5vw, 60px);
+  gap: clamp(25px, 3.5vw, 45px);
 }
 
-/* Two Column Layout */
+/* 2: About Me Title */
+.about-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #ffffff;
+  line-height: 1.1;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+  margin: 0;
+  width: 100%;
+}
+
+/* Main 2-Column Content Layout (3 & 4/5) */
 .about-main {
   display: grid;
-  grid-template-columns: clamp(280px, 30vw, 380px) 1fr;
-  gap: clamp(30px, 5vw, 70px);
+  grid-template-columns: clamp(250px, 26vw, 350px) 1fr;
+  gap: clamp(30px, 4vw, 60px);
   align-items: start;
   width: 100%;
 }
 
-/* Left Column */
+/* 3: PFP Column */
 .about-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: clamp(16px, 2vw, 24px);
-}
-
-.about-title {
-  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
-  color: #ffffff;
-  line-height: 1.2;
-  white-space: nowrap;
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-  margin: 0;
+  width: 100%;
 }
 
 .profile-frame {
@@ -197,13 +195,14 @@ body.about-page {
   object-fit: contain;
 }
 
-/* Right Column */
+/* 4 & 5: Intro Info & Socials Column */
 .about-right {
   display: flex;
   flex-direction: column;
   gap: clamp(20px, 3vw, 35px);
 }
 
+/* 4: Intro Info */
 .bio-box {
   display: flex;
   flex-direction: column;
@@ -211,7 +210,7 @@ body.about-page {
 }
 
 .bio-heading {
-  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   color: #ffffff;
   line-height: 1.2;
   display: flex;
@@ -228,12 +227,12 @@ body.about-page {
 }
 
 .bio-paragraph {
-  font-size: clamp(0.6rem, 1vw, 0.82rem);
+  font-size: clamp(0.6rem, 0.95vw, 0.82rem);
   line-height: 1.9;
   color: #ffffff;
 }
 
-/* Socials Container */
+/* 5: Socials Container */
 .socials-container {
   width: 100%;
 }
@@ -292,9 +291,7 @@ body.about-page {
   color: #cbb4ff;
 }
 
-/* ==========================================
-   TECHNICAL SKILLS SECTION
-   ========================================== */
+/* 6: Technical Skills Section */
 .skills-section {
   width: 100%;
   display: flex;
@@ -331,19 +328,19 @@ body.about-page {
   transform: scale(1.08);
 }
 
-/* Responsive adjustments */
+/* Mobile Responsiveness */
 @media (max-width: 850px) {
   .about-main {
     grid-template-columns: 1fr;
   }
 
   .about-left {
-    align-items: center;
-    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .profile-frame {
-    max-width: 320px;
+    max-width: 300px;
   }
 
   .skills-grid {
