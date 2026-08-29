@@ -42,7 +42,8 @@ body.home-page {
   justify-content: flex-end;
   align-items: center;
   gap: clamp(8px, 1.8vw, 28px);
-  width: 100%;
+  margin-left: auto;
+  width: auto;
 }
 
 .nav-link {
@@ -120,31 +121,9 @@ body.about-page {
 /* 1: Navigation Bar */
 .about-page .header {
   width: 100%;
-  max-width: 1280px;
   display: flex;
   justify-content: flex-end;
   margin-bottom: clamp(20px, 3vw, 35px);
-}
-
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  gap: clamp(12px, 2vw, 32px);
-}
-
-.nav-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: clamp(0.5rem, 1vw, 0.85rem);
-  white-space: nowrap;
-  transition: color 0.2s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: #cbb4ff;
 }
 
 /* Main Container */
@@ -167,22 +146,25 @@ body.about-page {
   width: 100%;
 }
 
-/* Main 2-Column Content Layout (3 & 4/5) */
 .about-main {
   display: grid;
-  grid-template-columns: clamp(250px, 26vw, 350px) 1fr;
-  gap: clamp(30px, 4vw, 60px);
+  grid-template-columns: clamp(350px, 36vw, 520px) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 50px);
   align-items: start;
   width: 100%;
 }
 
-/* 3: PFP Column */
-.about-left {
+.about-right {
+  min-width: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 35px);
 }
 
 .profile-frame {
   width: 100%;
+  max-width: 100%;
   aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
@@ -190,19 +172,11 @@ body.about-page {
 }
 
 .profile-img {
-  width: 100%;
-  height: 100%;
+  width: 200%;
+  height: 90%;
   object-fit: contain;
 }
 
-/* 4 & 5: Intro Info & Socials Column */
-.about-right {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(20px, 3vw, 35px);
-}
-
-/* 4: Intro Info */
 .bio-box {
   display: flex;
   flex-direction: column;
@@ -220,7 +194,7 @@ body.about-page {
 }
 
 .inline-sparkle {
-  width: clamp(20px, 2.5vw, 32px);
+  width: clamp(36px, 4vw, 55px);
   height: auto;
   object-fit: contain;
   image-rendering: pixelated;
@@ -230,6 +204,7 @@ body.about-page {
   font-size: clamp(0.6rem, 0.95vw, 0.82rem);
   line-height: 1.9;
   color: #ffffff;
+  text-align: justify;
 }
 
 /* 5: Socials Container */
@@ -270,7 +245,7 @@ body.about-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 2px;
   text-decoration: none;
   color: #ffffff;
   font-size: clamp(0.5rem, 0.8vw, 0.7rem);
@@ -280,8 +255,9 @@ body.about-page {
 }
 
 .social-icon {
-  width: clamp(55px, 4.5vw, 85px);
-  height: clamp(55px, 4.5vw, 85px);
+  width: 100%;
+  max-width: 120px;
+  height: auto;
   object-fit: contain;
   image-rendering: pixelated;
 }
@@ -309,7 +285,7 @@ body.about-page {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  gap: clamp(10px, 1.8vw, 24px);
+  gap: clamp(12px, 2vw, 28px);
   justify-items: center;
   align-items: center;
   width: 100%;
@@ -317,7 +293,7 @@ body.about-page {
 
 .skill-icon {
   width: 100%;
-  max-width: 85px;
+  max-width: 500px;
   aspect-ratio: 1 / 1;
   object-fit: contain;
   image-rendering: pixelated;
@@ -329,7 +305,7 @@ body.about-page {
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 850px) {
+@media (max-width: 960px) {
   .about-main {
     grid-template-columns: 1fr;
   }
@@ -340,7 +316,7 @@ body.about-page {
   }
 
   .profile-frame {
-    max-width: 300px;
+    max-width: 280px;
   }
 
   .skills-grid {
@@ -348,13 +324,98 @@ body.about-page {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .skills-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
   .socials-row {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ==========================================
+   ACHIEVEMENTS PAGE STYLES
+   ========================================== */
+body.achievements-page {
+  background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(16px, 3vw, 40px);
+}
+
+/* Header & Navigation Alignment */
+.achievements-page .header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: clamp(20px, 3.5vw, 40px);
+}
+
+/* General Navbar Link Styling Fallback */
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(0.45rem, 1.1vw, 0.85rem);
+  white-space: nowrap !important;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #cbb4ff;
+}
+
+/* Page Section & Title */
+.content-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 35px);
+}
+
+.achievements-title {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  color: #ffffff;
+  line-height: 1.1;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+  margin: 0;
+  text-align: left;
+}
+
+/* 2x2 Grid Layout for Certificates */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cert-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cert-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 }
