@@ -1,5 +1,5 @@
 /* ==========================================
-   GLOBAL RESET & VIEWPORT LOCK
+   GLOBAL RESET & FULL VIEWPORT SETUP
    ========================================== */
 * {
   box-sizing: border-box;
@@ -15,9 +15,6 @@ body {
   font-family: "Press Start 2P", cursive, monospace;
 }
 
-/* ==========================================
-   HOMEPAGE CONTAINER & FULL GRADIENT
-   ========================================== */
 body.home-page {
   background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
   color: #ffffff;
@@ -25,11 +22,12 @@ body.home-page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: clamp(15px, 3vw, 40px);
+  padding: clamp(12px, 3vw, 40px);
+  box-sizing: border-box;
 }
 
 /* ==========================================
-   HEADER & NAVBAR (SINGLE LINE ON MOBILE)
+   HEADER & NAVBAR (LOCKS TO 1 SINGLE ROW)
    ========================================== */
 .header {
   width: 100%;
@@ -40,18 +38,18 @@ body.home-page {
 .navbar {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap; /* Prevents menu links from dropping to a second line */
+  flex-wrap: nowrap; /* Prevents navigation links from wrapping into multiple rows */
   justify-content: flex-end;
   align-items: center;
-  gap: clamp(6px, 1.8vw, 25px);
+  gap: clamp(6px, 1.8vw, 28px);
   width: 100%;
 }
 
 .nav-link {
   color: #ffffff;
   text-decoration: none;
-  /* Scales font size dynamically so all 5 links fit on phone screens */
-  font-size: clamp(0.42rem, 2vw, 0.85rem);
+  /* Fluid font sizing scales between 0.38rem and 0.85rem based on window width */
+  font-size: clamp(0.38rem, 1.8vw, 0.85rem);
   white-space: nowrap;
   transition: color 0.2s ease;
 }
@@ -62,7 +60,7 @@ body.home-page {
 }
 
 /* ==========================================
-   HERO TITLE & STAR GRAPHIC
+   HERO TITLE & STAR FLUID SCALING
    ========================================== */
 .hero-container {
   flex: 1;
@@ -73,52 +71,49 @@ body.home-page {
   padding: 20px 0;
 }
 
-.hero-content {
+.hero-wrapper {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
-  width: 100%;
 }
 
 .hero-title {
-  display: flex;
-  flex-direction: column;
-  /* Fluid font scaling: scales smoothly from mobile width to desktop */
-  font-size: clamp(1.4rem, 6.2vw, 4.2rem);
+  /* Fluid text scaling adapts directly to viewport width */
+  font-size: clamp(1.4rem, 6.5vw, 4.5rem);
   line-height: 1.25;
   color: #ffffff;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+  margin: 0;
+  white-space: nowrap;
 }
 
-.title-line {
-  display: block;
-}
-
-.star-row {
+/* Row keeping 'Portfolio' and Star permanently side-by-side */
+.portfolio-row {
   display: flex;
   align-items: center;
   position: relative;
   white-space: nowrap;
 }
 
-/* STAR IMAGE - Retains side-by-side placement on all screen sizes */
 .hero-star {
-  width: clamp(100px, 32vw, 290px);
+  /* Star dimensions scale proportionally with text size */
+  width: clamp(75px, 28vw, 280px);
   height: auto;
   object-fit: contain;
   image-rendering: pixelated;
   margin-left: clamp(
-    -30px,
-    -5vw,
-    -60px
-  ); /* Keeps star overlapping "Portfolio" smoothly */
-  margin-top: clamp(-10px, -2vw, -20px);
+    -15px,
+    -4vw,
+    -50px
+  ); /* Keeps star attached to 'Portfolio' */
+  margin-top: clamp(-8px, -2vw, -25px);
   pointer-events: none;
   flex-shrink: 0;
 }
 
 /* ==========================================
-   NARROW WINDOW ADJUSTMENTS
+   NARROW / MOBILE SCREEN ADJUSTMENTS
    ========================================== */
 @media (max-width: 600px) {
   .header {
@@ -127,5 +122,10 @@ body.home-page {
 
   .navbar {
     justify-content: center;
+    gap: clamp(4px, 1.4vw, 10px);
+  }
+
+  .hero-wrapper {
+    align-items: center;
   }
 }
