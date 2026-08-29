@@ -1,6 +1,3 @@
-/* ==========================================
-   GLOBAL RESET & BASE SETUP
-   ========================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -59,7 +56,6 @@ body.home-page {
   color: #cbb4ff;
 }
 
-/* Hero Section */
 .hero-container {
   flex: 1;
   display: flex;
@@ -107,7 +103,9 @@ body.home-page {
   pointer-events: none;
 }
 
-/* Page Background & Global Setup */
+/* ==========================================
+   HOME PAGE STYLES
+   ========================================== */
 body.about-page {
   background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
   color: #ffffff;
@@ -118,7 +116,6 @@ body.about-page {
   padding: clamp(16px, 3vw, 40px);
 }
 
-/* 1: Navigation Bar */
 .about-page .header {
   width: 100%;
   display: flex;
@@ -126,7 +123,6 @@ body.about-page {
   margin-bottom: clamp(20px, 3vw, 35px);
 }
 
-/* Main Container */
 .portfolio-container {
   width: 100%;
   max-width: 1280px;
@@ -136,7 +132,6 @@ body.about-page {
   gap: clamp(25px, 3.5vw, 45px);
 }
 
-/* 2: About Me Title */
 .about-title {
   font-size: clamp(2rem, 4vw, 3.5rem);
   color: #ffffff;
@@ -184,20 +179,22 @@ body.about-page {
 }
 
 .bio-heading {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 3.8vw, 3.2rem) !important;
   color: #ffffff;
   line-height: 1.2;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   margin: 0;
 }
 
 .inline-sparkle {
-  width: clamp(36px, 4vw, 55px);
-  height: auto;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 36px !important;
   object-fit: contain;
   image-rendering: pixelated;
+  display: inline-block;
 }
 
 .bio-paragraph {
@@ -207,7 +204,6 @@ body.about-page {
   text-align: justify;
 }
 
-/* 5: Socials Container */
 .socials-container {
   width: 100%;
 }
@@ -267,7 +263,6 @@ body.about-page {
   color: #cbb4ff;
 }
 
-/* 6: Technical Skills Section */
 .skills-section {
   width: 100%;
   display: flex;
@@ -282,18 +277,27 @@ body.about-page {
   letter-spacing: 1px;
 }
 
+.skills-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 28px);
+}
+
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  gap: clamp(12px, 2vw, 28px);
-  justify-items: center;
+  display: grid !important;
+  grid-template-columns: repeat(9, 1fr) !important;
+  gap: clamp(12px, 2vw, 24px) !important;
   align-items: center;
+  justify-items: center;
   width: 100%;
 }
 
 .skill-icon {
-  width: 100%;
-  max-width: 500px;
+  width: 100% !important;
+  min-width: 65px !important; /* Prevents icons from shrinking into tiny dots */
+  max-width: 85px !important;
+  height: auto !important;
   aspect-ratio: 1 / 1;
   object-fit: contain;
   image-rendering: pixelated;
@@ -301,10 +305,9 @@ body.about-page {
 }
 
 .skill-icon:hover {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 960px) {
   .about-main {
     grid-template-columns: 1fr;
@@ -347,7 +350,6 @@ body.achievements-page {
   padding: clamp(16px, 3vw, 40px);
 }
 
-/* Header & Navigation Alignment */
 .achievements-page .header {
   width: 100%;
   display: flex;
@@ -355,7 +357,6 @@ body.achievements-page {
   margin-bottom: clamp(20px, 3.5vw, 40px);
 }
 
-/* General Navbar Link Styling Fallback */
 .navbar a {
   color: #ffffff;
   text-decoration: none;
@@ -369,7 +370,6 @@ body.achievements-page {
   color: #cbb4ff;
 }
 
-/* Page Section & Title */
 .content-section {
   width: 100%;
   display: flex;
@@ -386,7 +386,6 @@ body.achievements-page {
   text-align: left;
 }
 
-/* 2x2 Grid Layout for Certificates */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -499,7 +498,6 @@ body.activities-page {
   word-break: break-word;
 }
 
-/* Responsive Layout */
 @media (max-width: 768px) {
   .activities-grid {
     grid-template-columns: repeat(2, 1fr);
