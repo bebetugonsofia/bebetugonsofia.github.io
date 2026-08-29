@@ -1,5 +1,5 @@
 /* ==========================================
-   GLOBAL RESET & LIQUID RESPONSIVENESS
+   GLOBAL RESET & VIEWPORT LOCK
    ========================================== */
 * {
   box-sizing: border-box;
@@ -10,54 +10,50 @@
 html,
 body {
   width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden; /* Prevents horizontal scrollbars during window resize */
+  height: 100%;
+  overflow-x: hidden;
   font-family: "Press Start 2P", cursive, monospace;
 }
 
 /* ==========================================
-   HOMEPAGE CONTAINER & GRADIENT BACKGROUND
+   HOMEPAGE CONTAINER & FULL GRADIENT
    ========================================== */
 body.home-page {
-  background: linear-gradient(135deg, #180d63 0%, #2e1d9e 50%, #4a34cd 100%);
+  background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
   color: #ffffff;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: clamp(20px, 4vw, 50px);
-  box-sizing: border-box;
+  padding: clamp(15px, 3vw, 40px);
 }
 
 /* ==========================================
-   HEADER & NAVIGATION
+   HEADER & NAVBAR (SINGLE LINE ON MOBILE)
    ========================================== */
 .header {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  z-index: 10;
 }
 
 .navbar {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap; /* Prevents menu links from dropping to a second line */
   justify-content: flex-end;
-  gap: clamp(10px, 2vw, 30px);
   align-items: center;
+  gap: clamp(6px, 1.8vw, 25px);
+  width: 100%;
 }
 
 .nav-link {
   color: #ffffff;
   text-decoration: none;
-  font-size: clamp(
-    0.6rem,
-    1.1vw,
-    0.85rem
-  ); /* Dynamically shrinks with window width */
+  /* Scales font size dynamically so all 5 links fit on phone screens */
+  font-size: clamp(0.42rem, 2vw, 0.85rem);
   white-space: nowrap;
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .nav-link:hover,
@@ -66,33 +62,32 @@ body.home-page {
 }
 
 /* ==========================================
-   HERO SECTION (TITLE & STAR GRAPHIC)
+   HERO TITLE & STAR GRAPHIC
    ========================================== */
 .hero-container {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: clamp(10px, 6vw, 100px);
-  padding-right: clamp(10px, 4vw, 50px);
-  margin-top: clamp(20px, 4vh, 60px);
-  margin-bottom: clamp(20px, 4vh, 60px);
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
 }
 
 .hero-content {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 1200px;
 }
 
 .hero-title {
   display: flex;
   flex-direction: column;
-  /* Fluid font scaling: min 2rem, max 4.5rem, scales smoothly in-between */
-  font-size: clamp(2rem, 5.2vw, 4.5rem);
+  /* Fluid font scaling: scales smoothly from mobile width to desktop */
+  font-size: clamp(1.4rem, 6.2vw, 4.2rem);
   line-height: 1.25;
   color: #ffffff;
-  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
 .title-line {
@@ -100,54 +95,37 @@ body.home-page {
 }
 
 .star-row {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   position: relative;
-  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
-/* Scalable Pixel Star Image */
+/* STAR IMAGE - Retains side-by-side placement on all screen sizes */
 .hero-star {
-  /* Dynamically adjusts width relative to screen width */
-  width: clamp(110px, 20vw, 300px);
+  width: clamp(100px, 32vw, 290px);
   height: auto;
   object-fit: contain;
-  image-rendering: pixelated; /* Keeps pixel art crisp on all screen sizes */
-  margin-left: -20px;
-  margin-top: -15px;
+  image-rendering: pixelated;
+  margin-left: clamp(
+    -30px,
+    -5vw,
+    -60px
+  ); /* Keeps star overlapping "Portfolio" smoothly */
+  margin-top: clamp(-10px, -2vw, -20px);
   pointer-events: none;
   flex-shrink: 0;
 }
 
 /* ==========================================
-   MOBILE & NARROW WINDOW OPTIMIZATION
+   NARROW WINDOW ADJUSTMENTS
    ========================================== */
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .header {
     justify-content: center;
   }
 
   .navbar {
     justify-content: center;
-    gap: 12px 16px;
-  }
-
-  .hero-container {
-    padding-left: 0;
-    justify-content: center;
-  }
-
-  .hero-title {
-    text-align: center;
-  }
-
-  .star-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-star {
-    margin-left: 0;
-    margin-top: 15px;
   }
 }
