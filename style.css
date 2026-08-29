@@ -1,3 +1,6 @@
+/* ==========================================
+   GLOBAL RESET & BASE SETUP
+   ========================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -104,7 +107,7 @@ body.home-page {
 }
 
 /* ==========================================
-   HOME PAGE STYLES
+   ABOUT ME PAGE STYLES
    ========================================== */
 body.about-page {
   background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
@@ -179,22 +182,9 @@ body.about-page {
 }
 
 .bio-heading {
-  font-size: clamp(2rem, 3.8vw, 3.2rem) !important;
+  font-size: clamp(2rem, 3.5vw, 3rem);
   color: #ffffff;
-  line-height: 1.2;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 0;
-}
-
-.inline-sparkle {
-  width: 44px !important;
-  height: 44px !important;
-  min-width: 36px !important;
-  object-fit: contain;
-  image-rendering: pixelated;
-  display: inline-block;
+  margin-bottom: 12px;
 }
 
 .bio-paragraph {
@@ -263,11 +253,13 @@ body.about-page {
   color: #cbb4ff;
 }
 
+/* Technical Skills Section */
 .skills-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: clamp(16px, 2.5vw, 28px);
+  margin-top: 20px;
 }
 
 .skills-title {
@@ -277,27 +269,18 @@ body.about-page {
   letter-spacing: 1px;
 }
 
-.skills-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(16px, 2.5vw, 28px);
-}
-
 .skills-grid {
-  display: grid !important;
-  grid-template-columns: repeat(9, 1fr) !important;
-  gap: clamp(12px, 2vw, 24px) !important;
-  align-items: center;
-  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(16px, 2.5vw, 32px);
   width: 100%;
+  align-items: center;
 }
 
 .skill-icon {
-  width: 100% !important;
-  min-width: 65px !important; /* Prevents icons from shrinking into tiny dots */
-  max-width: 85px !important;
-  height: auto !important;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: contain;
   image-rendering: pixelated;
@@ -305,7 +288,7 @@ body.about-page {
 }
 
 .skill-icon:hover {
-  transform: scale(1.1);
+  transform: translateY(-4px) scale(1.05);
 }
 
 @media (max-width: 960px) {
@@ -321,20 +304,24 @@ body.about-page {
   .profile-frame {
     max-width: 280px;
   }
+}
 
+@media (max-width: 768px) {
   .skills-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .socials-row {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -411,7 +398,6 @@ body.achievements-page {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Responsive adjustment for small screens */
 @media (max-width: 768px) {
   .cert-grid {
     grid-template-columns: 1fr;
@@ -565,14 +551,14 @@ body.projects-page {
   grid-template-columns: repeat(4, 1fr);
   gap: clamp(12px, 2vw, 24px);
   width: 100%;
-  align-items: center; /* Centers items vertically within grid rows */
+  align-items: center;
 }
 
 .project-media {
   width: 100%;
-  height: auto; /* Preserves natural image/video aspect ratio */
+  height: auto;
   max-width: 100%;
-  object-fit: contain; /* Prevents cropping or stretching */
+  object-fit: contain;
   border-radius: 4px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
   transition:
@@ -585,7 +571,6 @@ body.projects-page {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Responsive Layout */
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
