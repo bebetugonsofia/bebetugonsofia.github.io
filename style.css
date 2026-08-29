@@ -10,11 +10,14 @@
 html,
 body {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
   font-family: "Press Start 2P", cursive, monospace;
 }
 
+/* ==========================================
+   HOME PAGE STYLES
+   ========================================== */
 body.home-page {
   background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
   color: #ffffff;
@@ -26,9 +29,7 @@ body.home-page {
   box-sizing: border-box;
 }
 
-/* ==========================================
-   HEADER & NAVBAR (LOCKS TO 1 SINGLE ROW)
-   ========================================== */
+/* Header & Navigation */
 .header {
   width: 100%;
   display: flex;
@@ -38,7 +39,7 @@ body.home-page {
 .navbar {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap; /* Prevents navigation links from wrapping into multiple rows */
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
   gap: clamp(6px, 1.8vw, 28px);
@@ -48,7 +49,6 @@ body.home-page {
 .nav-link {
   color: #ffffff;
   text-decoration: none;
-  /* Fluid font sizing scales between 0.38rem and 0.85rem based on window width */
   font-size: clamp(0.38rem, 1.8vw, 0.85rem);
   white-space: nowrap;
   transition: color 0.2s ease;
@@ -59,9 +59,7 @@ body.home-page {
   color: #cbb4ff;
 }
 
-/* ==========================================
-   HERO TITLE & STAR FLUID SCALING
-   ========================================== */
+/* Hero Section */
 .hero-container {
   flex: 1;
   display: flex;
@@ -74,7 +72,6 @@ body.home-page {
   box-sizing: border-box;
 }
 
-/* Container for the text block */
 .hero-wrapper {
   display: flex;
   flex-direction: column;
@@ -101,8 +98,8 @@ body.home-page {
 
 .hero-star {
   position: absolute;
-  left: 64%; /* Shifts star toward the right side of 'Portfolio' */
-  top: 36%; /* Centers vertically aligned with 'Portfolio' */
+  left: 64%;
+  top: 36%;
   transform: translateY(-50%);
   width: 10.8em;
   height: auto;
@@ -111,103 +108,80 @@ body.home-page {
 }
 
 /* ==========================================
-   ABOUT PAGE BASE & WRAPPER
+   ABOUT PAGE BASE & GRID LAYOUT
    ========================================== */
 body.about-page {
-  background-color: #2b1f9e;
+  background-color: #2a1e9e;
   color: #ffffff;
   min-height: 100vh;
-  margin: 0;
-  padding: clamp(15px, 3vw, 40px);
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  box-sizing: border-box;
-  font-family: "Press Start 2P", cursive, monospace;
+  padding: clamp(15px, 3vw, 40px);
 }
 
-.about-wrapper {
+.portfolio-container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1050px;
   display: flex;
   flex-direction: column;
-  gap: clamp(20px, 3.5vw, 45px);
+  gap: clamp(25px, 4vw, 45px);
 }
 
-/* ==========================================
-   HEADER & NAVBAR
-   ========================================== */
+/* Desktop Grid Layout Setup */
+.about-grid {
+  display: grid;
+  grid-template-columns: clamp(180px, 22vw, 290px) 1fr;
+  grid-template-areas:
+    "title   nav"
+    "profile bio"
+    "profile socials";
+  column-gap: clamp(20px, 4vw, 50px);
+  row-gap: clamp(8px, 1.5vw, 18px);
+  align-items: start;
+}
+
+/* Assign Grid Areas */
 .about-page .header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.about-page .navbar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: center;
-  gap: clamp(6px, 1.8vw, 28px);
+  grid-area: nav;
+  justify-self: end;
   width: 100%;
 }
-
-.about-page .nav-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: clamp(0.38rem, 1.8vw, 0.85rem);
-  white-space: nowrap;
-  transition: color 0.2s ease;
+.about-title {
+  grid-area: title;
+}
+.profile-frame {
+  grid-area: profile;
+}
+.bio-box {
+  grid-area: bio;
+}
+.socials-box {
+  grid-area: socials;
 }
 
-.about-page .nav-link:hover,
-.about-page .nav-link.active {
-  color: #cbb4ff;
-}
-
-/* ==========================================
-   MAIN CONTENT GRID (LEFT / RIGHT)
-   ========================================== */
-.about-main {
-  display: flex;
-  flex-direction: row;
-  gap: clamp(20px, 4vw, 50px);
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-/* Left Column */
-.about-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  flex-shrink: 0;
-}
-
+/* About Title */
 .about-title {
   font-size: clamp(1.8rem, 4.5vw, 3.2rem);
   color: #ffffff;
-  margin-bottom: clamp(12px, 2vw, 25px);
   white-space: nowrap;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
-/* Profile Picture Frame */
+/* Profile Picture Outer Frame */
 .profile-frame {
-  width: clamp(160px, 22vw, 280px);
-  height: clamp(160px, 22vw, 280px);
+  width: clamp(170px, 22vw, 280px);
+  height: clamp(170px, 22vw, 280px);
   border-radius: 50%;
-  border: clamp(5px, 0.8vw, 10px) solid #8f58ff;
+  border: clamp(5px, 0.8vw, 9px) solid #8f58ff;
   box-shadow:
-    0 0 0 clamp(3px, 0.5vw, 6px) #2b1f9e,
+    0 0 0 clamp(3px, 0.5vw, 6px) #2a1e9e,
     0 0 0 clamp(6px, 1vw, 12px) #b485ff;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-  flex-shrink: 0;
 }
 
 .profile-img {
@@ -216,21 +190,13 @@ body.about-page {
   object-fit: cover;
 }
 
-/* Right Column */
-.about-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  margin-top: clamp(10px, 3vw, 50px); /* Align bio visually with top of pfp */
-}
-
-.bio-content {
-  margin-bottom: clamp(15px, 2.5vw, 25px);
+/* Bio Content Section */
+.bio-box {
+  margin-top: clamp(0px, 1vw, 15px);
 }
 
 .bio-heading {
-  font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.7rem);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -239,24 +205,29 @@ body.about-page {
 }
 
 .inline-sparkle {
-  width: clamp(16px, 2.2vw, 28px);
+  width: clamp(16px, 2.2vw, 26px);
   height: auto;
   object-fit: contain;
   image-rendering: pixelated;
 }
 
 .bio-paragraph {
-  font-size: clamp(0.5rem, 1.05vw, 0.72rem);
+  font-size: clamp(0.48rem, 1.02vw, 0.72rem);
   line-height: 1.85;
   color: #ffffff;
 }
 
-/* Socials Divider */
+/* Socials Divider & Link Buttons */
+.socials-box {
+  width: 100%;
+  margin-top: clamp(5px, 1vw, 15px);
+}
+
 .socials-divider {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: clamp(15px, 2vw, 25px);
+  margin-bottom: clamp(12px, 2vw, 22px);
 }
 
 .divider-line {
@@ -266,20 +237,18 @@ body.about-page {
 }
 
 .divider-text {
-  padding: 0 clamp(6px, 1.2vw, 15px);
-  font-size: clamp(0.5rem, 1.1vw, 0.8rem);
+  padding: 0 clamp(6px, 1.2vw, 14px);
+  font-size: clamp(0.48rem, 1.1vw, 0.78rem);
   letter-spacing: 2px;
   white-space: nowrap;
 }
 
-/* Social Icons Row */
 .socials-row {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  gap: clamp(8px, 1.5vw, 20px);
 }
 
 .social-item {
@@ -289,15 +258,15 @@ body.about-page {
   gap: 6px;
   text-decoration: none;
   color: #ffffff;
-  font-size: clamp(0.42rem, 0.95vw, 0.65rem);
+  font-size: clamp(0.4rem, 0.95vw, 0.62rem);
   transition:
     transform 0.2s ease,
     color 0.2s ease;
 }
 
 .social-icon {
-  width: clamp(28px, 4vw, 48px);
-  height: clamp(28px, 4vw, 48px);
+  width: clamp(28px, 4vw, 46px);
+  height: clamp(28px, 4vw, 46px);
   object-fit: contain;
   image-rendering: pixelated;
 }
@@ -315,11 +284,10 @@ body.about-page {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: clamp(10px, 2vw, 20px);
 }
 
 .skills-title {
-  font-size: clamp(1.1rem, 3vw, 2rem);
+  font-size: clamp(1.1rem, 2.8vw, 1.9rem);
   color: #ffffff;
   margin-bottom: clamp(15px, 2.5vw, 25px);
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
@@ -328,16 +296,16 @@ body.about-page {
 
 .skills-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  gap: clamp(10px, 2vw, 22px);
   width: 100%;
+  gap: clamp(6px, 1.5vw, 18px);
 }
 
 .skill-icon {
-  width: clamp(48px, 7vw, 75px);
-  height: clamp(48px, 7vw, 75px);
+  width: clamp(38px, 6.5vw, 72px);
+  height: clamp(38px, 6.5vw, 72px);
   object-fit: contain;
   image-rendering: pixelated;
   transition: transform 0.2s ease;
@@ -348,11 +316,24 @@ body.about-page {
 }
 
 /* ==========================================
-   MOBILE & RESIZING ADJUSTMENTS
+   MOBILE RESPONSIVE ADJUSTMENTS
    ========================================== */
-@media (max-width: 650px) {
+@media (max-width: 700px) {
+  .about-grid {
+    grid-template-columns: clamp(100px, 28vw, 150px) 1fr;
+    grid-template-areas:
+      "nav     nav"
+      "title   title"
+      "profile bio"
+      "socials socials";
+    column-gap: 10px;
+    row-gap: 12px;
+  }
+
   .about-page .header {
+    justify-self: center;
     justify-content: center;
+    margin-bottom: 5px;
   }
 
   .about-page .navbar {
@@ -360,17 +341,19 @@ body.about-page {
     gap: clamp(4px, 1.4vw, 10px);
   }
 
-  .about-main {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .about-right {
-    margin-top: 10px;
-    width: 100%;
+  .about-title {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
   }
 
   .skills-grid {
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-items: start;
+  }
+
+  .skill-icon {
+    width: clamp(42px, 18vw, 65px);
+    height: clamp(42px, 18vw, 65px);
   }
 }
