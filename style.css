@@ -511,3 +511,90 @@ body.activities-page {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================
+   PROJECTS PAGE STYLES
+   ========================================== */
+body.projects-page {
+  background: linear-gradient(180deg, #1d106e 0%, #2a1d8f 60%, #4c3fb5 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(16px, 3vw, 40px);
+}
+
+.projects-page .header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: clamp(20px, 3.5vw, 40px);
+}
+
+.projects-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, 4vw, 50px);
+}
+
+.projects-title {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  color: #ffffff;
+  line-height: 1.1;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+  margin: 0;
+  text-align: left;
+}
+
+.project-category {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.category-title {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #ffffff;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
+  margin: 0;
+}
+
+/* 4-column layout matching the mockup design */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 2vw, 24px);
+  width: 100%;
+}
+
+.project-media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-media:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive breakpoint adaptations */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
