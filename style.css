@@ -71,61 +71,41 @@ body.home-page {
   padding: 20px 0;
 }
 
+/* Container for the text block */
 .hero-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
 }
 
 .hero-title {
-  /* Fluid text scaling adapts directly to viewport width */
   font-size: clamp(1.4rem, 6.5vw, 4.5rem);
-  line-height: 1.25;
+  line-height: 1.2;
   color: #ffffff;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
   margin: 0;
   white-space: nowrap;
 }
 
-/* Row keeping 'Portfolio' and Star permanently side-by-side */
-.portfolio-row {
-  display: flex;
-  align-items: center;
+.title-line {
+  display: block;
+}
+
+/* Relative anchor wrapper around the word 'Portfolio' */
+.portfolio-line {
   position: relative;
-  white-space: nowrap;
+  display: inline-block;
 }
 
+/* Absolutely positioned star sized in 'em' units */
 .hero-star {
-  /* Star dimensions scale proportionally with text size */
-  width: clamp(75px, 28vw, 280px);
+  position: absolute;
+  left: 52%; /* Positions the star point behind the letters 'f'/'o' */
+  top: 50%; /* Vertically aligns the star center with 'Portfolio' */
+  transform: translateY(-52%);
+  width: 2.8em; /* 'em' unit scales star dimensions 1:1 with font size */
   height: auto;
-  object-fit: contain;
-  image-rendering: pixelated;
-  margin-left: clamp(
-    -15px,
-    -4vw,
-    -50px
-  ); /* Keeps star attached to 'Portfolio' */
-  margin-top: clamp(-8px, -2vw, -25px);
+  image-rendering: pixelated; /* Preserves crisp pixel art edges */
   pointer-events: none;
-  flex-shrink: 0;
-}
-
-/* ==========================================
-   NARROW / MOBILE SCREEN ADJUSTMENTS
-   ========================================== */
-@media (max-width: 600px) {
-  .header {
-    justify-content: center;
-  }
-
-  .navbar {
-    justify-content: center;
-    gap: clamp(4px, 1.4vw, 10px);
-  }
-
-  .hero-wrapper {
-    align-items: center;
-  }
+  z-index: -1; /* Keeps star layered behind/around the text layer */
 }
