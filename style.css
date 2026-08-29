@@ -66,9 +66,12 @@ body.home-page {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   width: 100%;
-  padding: 20px 0;
+  padding-left: clamp(35px, 8vw, 130px);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
 }
 
 /* Container for the text block */
@@ -79,7 +82,7 @@ body.home-page {
 }
 
 .hero-title {
-  font-size: clamp(1.4rem, 6.5vw, 4.5rem);
+  font-size: clamp(1.5rem, 6.5vw, 4.5rem);
   line-height: 1.2;
   color: #ffffff;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
@@ -91,21 +94,283 @@ body.home-page {
   display: block;
 }
 
-/* Relative anchor wrapper around the word 'Portfolio' */
 .portfolio-line {
   position: relative;
   display: inline-block;
 }
 
-/* Absolutely positioned star sized in 'em' units */
 .hero-star {
   position: absolute;
-  left: 52%; /* Positions the star point behind the letters 'f'/'o' */
-  top: 50%; /* Vertically aligns the star center with 'Portfolio' */
-  transform: translateY(-52%);
-  width: 2.8em; /* 'em' unit scales star dimensions 1:1 with font size */
+  left: 64%; /* Shifts star toward the right side of 'Portfolio' */
+  top: 36%; /* Centers vertically aligned with 'Portfolio' */
+  transform: translateY(-50%);
+  width: 10.8em;
   height: auto;
-  image-rendering: pixelated; /* Preserves crisp pixel art edges */
+  image-rendering: pixelated;
   pointer-events: none;
-  z-index: -1; /* Keeps star layered behind/around the text layer */
+}
+
+/* ==========================================
+   ABOUT PAGE BASE & WRAPPER
+   ========================================== */
+body.about-page {
+  background-color: #2b1f9e;
+  color: #ffffff;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(15px, 3vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive, monospace;
+}
+
+.about-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3.5vw, 45px);
+}
+
+/* ==========================================
+   HEADER & NAVBAR
+   ========================================== */
+.about-page .header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-page .navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: clamp(6px, 1.8vw, 28px);
+  width: 100%;
+}
+
+.about-page .nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(0.38rem, 1.8vw, 0.85rem);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.about-page .nav-link:hover,
+.about-page .nav-link.active {
+  color: #cbb4ff;
+}
+
+/* ==========================================
+   MAIN CONTENT GRID (LEFT / RIGHT)
+   ========================================== */
+.about-main {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(20px, 4vw, 50px);
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Left Column */
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.about-title {
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  color: #ffffff;
+  margin-bottom: clamp(12px, 2vw, 25px);
+  white-space: nowrap;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Profile Picture Frame */
+.profile-frame {
+  width: clamp(160px, 22vw, 280px);
+  height: clamp(160px, 22vw, 280px);
+  border-radius: 50%;
+  border: clamp(5px, 0.8vw, 10px) solid #8f58ff;
+  box-shadow:
+    0 0 0 clamp(3px, 0.5vw, 6px) #2b1f9e,
+    0 0 0 clamp(6px, 1vw, 12px) #b485ff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  flex-shrink: 0;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Column */
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-top: clamp(10px, 3vw, 50px); /* Align bio visually with top of pfp */
+}
+
+.bio-content {
+  margin-bottom: clamp(15px, 2.5vw, 25px);
+}
+
+.bio-heading {
+  font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(10px, 1.8vw, 18px);
+}
+
+.inline-sparkle {
+  width: clamp(16px, 2.2vw, 28px);
+  height: auto;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.bio-paragraph {
+  font-size: clamp(0.5rem, 1.05vw, 0.72rem);
+  line-height: 1.85;
+  color: #ffffff;
+}
+
+/* Socials Divider */
+.socials-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: clamp(15px, 2vw, 25px);
+}
+
+.divider-line {
+  flex: 1;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.divider-text {
+  padding: 0 clamp(6px, 1.2vw, 15px);
+  font-size: clamp(0.5rem, 1.1vw, 0.8rem);
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* Social Icons Row */
+.socials-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  gap: clamp(8px, 1.5vw, 20px);
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: clamp(0.42rem, 0.95vw, 0.65rem);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.social-icon {
+  width: clamp(28px, 4vw, 48px);
+  height: clamp(28px, 4vw, 48px);
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.social-item:hover {
+  transform: translateY(-3px);
+  color: #cbb4ff;
+}
+
+/* ==========================================
+   TECHNICAL SKILLS SECTION
+   ========================================== */
+.skills-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: clamp(10px, 2vw, 20px);
+}
+
+.skills-title {
+  font-size: clamp(1.1rem, 3vw, 2rem);
+  color: #ffffff;
+  margin-bottom: clamp(15px, 2.5vw, 25px);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: clamp(10px, 2vw, 22px);
+  width: 100%;
+}
+
+.skill-icon {
+  width: clamp(48px, 7vw, 75px);
+  height: clamp(48px, 7vw, 75px);
+  object-fit: contain;
+  image-rendering: pixelated;
+  transition: transform 0.2s ease;
+}
+
+.skill-icon:hover {
+  transform: scale(1.08);
+}
+
+/* ==========================================
+   MOBILE & RESIZING ADJUSTMENTS
+   ========================================== */
+@media (max-width: 650px) {
+  .about-page .header {
+    justify-content: center;
+  }
+
+  .about-page .navbar {
+    justify-content: center;
+    gap: clamp(4px, 1.4vw, 10px);
+  }
+
+  .about-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-right {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .skills-grid {
+    justify-content: flex-start;
+  }
 }
