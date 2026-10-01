@@ -700,7 +700,6 @@ body.home-page {
   letter-spacing: 1px;
 }
 
-/* Grid layout for the 3 converter boxes */
 #container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -708,7 +707,6 @@ body.home-page {
   width: 100%;
 }
 
-/* Individual container card */
 #container .container {
   background: rgba(15, 8, 55, 0.75);
   border: 3px solid #cbb4ff;
@@ -728,7 +726,6 @@ body.home-page {
   letter-spacing: 0.5px;
 }
 
-/* Shared styling for textarea, raw HTML, and preview */
 #markdown-input,
 #html-output,
 #preview {
@@ -747,7 +744,6 @@ body.home-page {
   word-break: break-word;
 }
 
-/* Textarea specifics */
 #markdown-input {
   resize: vertical;
   outline: none;
@@ -765,7 +761,6 @@ body.home-page {
   color: #6a619c;
 }
 
-/* Raw HTML code display */
 #html-output {
   color: #b0a3f3;
   white-space: pre-wrap;
@@ -773,7 +768,6 @@ body.home-page {
   font-size: 0.75rem;
 }
 
-/* Custom Markdown Elements in Live Preview */
 #preview h1 {
   font-size: 1rem;
   color: #ffffff;
@@ -848,7 +842,6 @@ body.home-page {
   border: 1px solid #ffffff;
 }
 
-/* Responsive Layout */
 @media (max-width: 900px) {
   #container {
     grid-template-columns: 1fr;
